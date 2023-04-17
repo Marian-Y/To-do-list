@@ -117,7 +117,7 @@ const itemCase = document.createElement(`p`); // <p></p>
 const itemStartOfExecution = document.createElement(`p`); // <p></p>
 const itemNotes = document.createElement(`div`); // <p></p>
 
-  // `Текст 1 рядка`
+// `Текст 1 рядка`
 const itemNodeTextInputCase = document.createTextNode(inputCase);
 // `2024-03-12T12:03`
 const itemNodeTextInputStartOfExecution = document.createTextNode(inputStartOfExecution);
@@ -128,10 +128,11 @@ itemNode.id = newId; // <li id=``></li>
 itemCase.id = `liCase`; // <p id=`liCase`></p>     
 itemStartOfExecution.id = `liStartOfExecution`; // <p id=`liStartOfExecution`></p>   
 
-const itemNodeButton = document.createElement(`button`); // <button></button>
-itemNodeButton.innerHTML = 'delete_forever'; //  <button>delete_forever</button>
-itemNodeButton.onclick = () => deleteToDoListItem(newId);  // <button onclick="onAdd()" >delete_forever</button>
-itemNodeButton.className = `material-symbols-outlined`; // <button class="material-symbols-outlined" onclick="onAdd()" >delete_forever</button>
+const itemNodeButton = document.createElement(`span`); // <button></button>
+itemNodeButton.innerHTML = '<button  id=' + newId + ' class="material-symbols-outlined" onclick="deleteToDoListItem(id)">delete_forever</button>';
+// itemNodeButton.innerHTML = 'delete_forever'; //  <button>delete_forever</button>
+// itemNodeButton.onclick = () => deleteToDoListItem(newId); // <button onclick="onAdd()" >delete_forever</button>
+// itemNodeButton.className = `material-symbols-outlined`; // <button class="material-symbols-outlined" onclick="onAdd()" >delete_forever</button>
 
 
 itemCase.innerHTML = 'Справа: '; // <p>Справа: </p>
@@ -154,10 +155,12 @@ if(itemNodeTextInputNotes.length > 1){
   const accordionI = document.createElement(`i`);
   const accordionH2 = document.createElement(`h2`);
   const accordionP = document.createElement(`p`);
+  const accordionCopeButton = document.createElement(`button`);
 
   itemNotes.id = "faq";
 
   accordionInput.type = "checkbox";    
+  accordionInput.checked = true;
 
   accordionH2.innerHTML = 'Примітки: ';
   accordionP.appendChild(itemNodeTextInputNotes);
@@ -174,13 +177,12 @@ if(itemNodeTextInputNotes.length > 1){
 toDoListNode.appendChild(itemNode);
 
 const directChildren = toDoListNode.children.length;
-counterElement.innerHTML = directChildren;
-localStorage.setItem('toDoListNode', toDoListNode.innerHTML);
+counterElement.innerHTML = directChildren;  
 save();
 }
 
 function save() {
-  
+  localStorage.setItem('toDoListNode', toDoListNode.innerHTML);
   localStorage.setItem('counterId', counterId);
 }
 
