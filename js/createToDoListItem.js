@@ -27,7 +27,7 @@ function createToDoListItem(inputCase, newFormat, inputNotes, inputImage) {
     itemNode.style.backgroundColor = "#" + randomColor;
 })();
 
-  itemDiv.className = `itemDiv`;
+  // itemDiv.className = `itemDiv`;
   itemNode.id = newId;
   itemCase.id = `liCase`;  
   spanCaseP.className = `liCaseP`;  
@@ -54,6 +54,8 @@ function createToDoListItem(inputCase, newFormat, inputNotes, inputImage) {
     img.src = inputImage;
     itemNode.appendChild(img);
     readerResult = ``;
+    itemDiv.style.position = `absolute`;
+    itemDiv.style.display = `inline-block`;
   } 
 
   itemNode.appendChild(itemNodeButton); 
