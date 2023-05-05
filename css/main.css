@@ -2,11 +2,13 @@
 
 body {
   height: 100%;
-  background: linear-gradient(155deg, #262b2e 0%, #262b2e 33%, #ff0000 48%, #ffffff 65%, #ffffff 100%);
+  background: linear-gradient(155deg, #222831 0%, #222831 33%, #084651 48%, #779595 65%, #dde1e1 100%);
   background-size: 170% 330%;
   /* overflow: hidden; */
   transition: all 1s ease;
   margin: 0px;
+/* #222831 */
+
 
   background-repeat: no-repeat;
   background-position: 0 0;
@@ -94,9 +96,10 @@ div.night {
 }
 
 #info p{  
-  color: #00a2ff;
+  color: #00ADB5;
   font-family: arial;
   font-size: 22px;
+  margin: 10px 0px 0px 0px;
 }
 
 /* Form */
@@ -160,6 +163,27 @@ div.night {
   /* font-weight: 700; */
 }
 
+#fileButton{
+    display: block;
+    width: 100%;
+    height: 40px;
+    padding: 6px 12px;
+    margin: 12px 0px 0px 0px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #CCC;
+    background: #393E46;
+    border: 0;
+    outline: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 400ms ease
+}
+#fileButton:hover {
+  background: linear-gradient(to right, #222831 , #8f050590);
+  color: #FFF
+}
+
 /* reset input */
 .form__field:required, .form__field:invalid {
   box-shadow: none;
@@ -174,7 +198,7 @@ button {
   margin: 20px 0px 20px 0px;
 }
 .custom-btn {
-  width: 130px;
+  width: 150px;
   height: 40px;
   color: #fff;
   border-radius: 5px;
@@ -186,18 +210,19 @@ button {
   transition: all 0.3s ease;
   position: relative;
   display: inline-block;
-   box-shadow:inset 2px 2px 2px 0px rgba(255, 0, 0, 0.5),
-   7px 7px 20px 0px rgba(0,0,0,.1),
-   4px 4px 5px 0px rgba(0,0,0,.1);
+  box-shadow:inset 2px 2px 2px 0px rgba(0, 0, 0, 0.5),
+  7px 7px 20px 0px rgba(0,0,0,.1),
+  4px 4px 5px 0px rgba(0,0,0,.1);
   outline: none;
 }
 
 /* 7 */
 .btn-7 {
-background: linear-gradient(160deg, #262b2e 0%, #262b2e 33%, #ff0000 48%, #262b2e 65%, #262b2e 100%);
+background: #393E46;
   line-height: 42px;
   padding: 0;
   border: none;
+  margin-bottom: 0px;
 }
 .btn-7 span {
   position: relative;
@@ -261,19 +286,30 @@ button[disabled]{
   transition: all 1.3s ease;
 }
 
+.btn-7:disabled:after,
+button[disabled]{
+  /* position: absolute; */
+  /* content: ""; */
+  /* right: 0; */
+  /* bottom: 0; */
+  background: rgba(255, 0, 0, 0.5);
+  transition: all 1.3s ease;
+}
+
 #list {
-  padding: 0px 0px 20px 0px ;
+  margin: 20px 0px 40px 0px ;
+  /* padding: 0px 0px 20px 0px ; */
 }
 
 #list li{  
   font-family: 'Roboto', sans-serif;
   list-style: none;
-	padding: 5px 15px;
-	color: #ffffff;
+	padding: 15px;
+	color: #000000;
 	font-weight: 500;
 	border-radius: 5px;
 	margin-bottom: 10px;
-	background: #00a2ff;
+	background: #03C988;
 }
 
 /* #liStartOfExecution{
@@ -300,12 +336,14 @@ button[disabled]{
 
 
 #faq {
+
   margin: auto;
   text-align: center;
 }
 
 
 #faq ul {
+  
   text-align: left;
 }
 .transition, p, ul li i:before, ul li i:after {
@@ -335,7 +373,7 @@ button[disabled]{
 }
 
 #faq p {
-  color: #333;
+  color: #000000;
   text-align: left;
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
@@ -406,7 +444,7 @@ button[disabled]{
   touch-action: manipulation;
 }
 #faq ul li input[type=checkbox]:checked ~ h2 {
-  color: #ffffff;
+  color: #000000;
 }
 #faq ul li input[type=checkbox]:checked ~ p {
   /*margin-top: 0;*/
@@ -430,3 +468,45 @@ ul {
   padding: 0;
   list-style: none;
 }
+
+#image{
+  height: 100px; 
+  /* float: left;  */
+  margin-right: 10px;
+
+}
+
+.containerError {
+  background: var(--background-color);
+  /* width: 100vw;
+  height: 100vh; */
+  /* display: grid; */
+  place-items: center;
+}
+
+
+.popup {
+  position: absolute;
+  top: 85%;
+  left: -300px;
+  background: #c00;
+  display: flex;
+  justify-content: left;
+  padding: 20px;
+  gap: 10px;
+  align-items: center;
+  border-radius: 0.5rem;
+  transition: all 0.8s;
+}
+
+.popup p {
+  color: var(--text-color);
+  font-family: sans-serif;
+  font-size: 1.1rem;
+}
+
+.itemDiv{
+  position: absolute;
+  display: inline-block;
+}
+
