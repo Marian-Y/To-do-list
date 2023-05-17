@@ -1,5 +1,6 @@
 var importToDoList = document.getElementById(`importFile`);
 
+
 importToDoList.addEventListener("change", function () {
     localStorage.clear();
     let fileReader = new FileReader();
@@ -22,4 +23,7 @@ function lssave(json) {
         createToDoListItem(inputCase, nowFormat, inputNotes, inputImage);
     });
 }
+
+
+
 

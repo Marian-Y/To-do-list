@@ -14,14 +14,9 @@ function deleteToDoListItem(id) {
   const element = document.getElementById(id);
   element.remove();
 
-  localStorage.setItem('toDoList', JSON.stringify(deleteAnArrayElement));
-
   const directChildren = toDoListNode.children.length;
   counterElement.innerHTML = directChildren;
 }
-
-
-
 
 function importDeleteToDoListItem() {
   for (var i = tagDeleteOldListElement.length - 1; i >= 0; --i) {

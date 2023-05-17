@@ -1,6 +1,6 @@
 var inputCase = document.getElementById(`case`),
   inputStartOfExecution = document.getElementById(`startOfExecution`),
-  errorPopup = document.getElementById(`popupP`);  
+  errorPopup = document.getElementById(`popupP`);
 
 var nowDate = new Date();
 var futDate = new Date();
@@ -35,7 +35,7 @@ var inputCaseValue;
 var nowFormat;
 
 function validation() {
-  inputCaseValue = inputCase.value.trim();  
+  inputCaseValue = inputCase.value.trim();
   var newFormat = inputStartOfExecution.value;
 
   function currentDate(newFormat) {

@@ -2,19 +2,19 @@
 
     console.save = function (data, filename) {
 
-        if (!data) {
-            console.error('Console.save: No data');
+        if (!data || data == `[]`) {
+            errorPopup.innerHTML = `Немає даних`;
+            popupError();
             return;
         }
         let nameFile = Math.floor(Math.random() * 9999999);
-        
+
         if (!filename) { filename = nameFile + '.json'; }
 
         if (typeof data === "object") {
             data = JSON.stringify(data, undefined, 4);
         }
-        console.log(data);
-        console.log(typeof data);
+
         var blob = new Blob([data], { type: 'text/json' }),
             e = document.createEvent('MouseEvents'),
             a = document.createElement('a');

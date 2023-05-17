@@ -1,4 +1,3 @@
-
 function onAdd() {
     var toDoListElement = {};
     toDoListElement.case = inputCaseValue;

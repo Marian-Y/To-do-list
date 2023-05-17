@@ -27,7 +27,6 @@ function createToDoListItem(inputCase, newFormat, inputNotes, inputImage) {
     itemNode.style.backgroundColor = "#" + randomColor;
 })();
 
-  // itemDiv.className = `itemDiv`;
   itemNode.id = newId;
   itemCase.id = `liCase`;  
   spanCaseP.className = `liCaseP`;  
@@ -110,20 +109,3 @@ function createToDoListItem(inputCase, newFormat, inputNotes, inputImage) {
 
 // JSON.stringify(object)      Перетворити обєкт в стрінгу
 // JSON.parse(string)         Реверс команди stringfy перетворити стрінгу на обєкт
-
-// var saved = localStorage.getItem('toDoList');
-
-// if(saved) {  
-//     var x = JSON.parse(saved);
-//     x.forEach(function (value) {
-//         var inputCase = value.case;
-//         var nowFormat = value.date;
-//         var inputNotes = value.notes;
-//         var inputImage = value.image;
-//         createToDoListItem(inputCase, nowFormat, inputNotes, inputImage);
-//     });
-//   toDoListNode = saved;
-
-//   const directChildren = toDoListNode.children.length;
-//   counterElement.innerHTML = directChildren;
-// }
