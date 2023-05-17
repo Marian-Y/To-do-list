@@ -1,22 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/main.css">
+
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
+
+
 <body>
-    <input id="text" type="text">
+  <div class="checkbox">
+    <input id="time" type="checkbox" />
+    <label for="time"></label>
+  </div>
 
-    <button onclick="onAdd()" >Додати</button>
+  <section class="stages">
+    <div class="night">
+    </div>
+    <div class="day">
+    </div>
+  </section>
 
-    <div id="toDoList">
-
+  <div id="toDoList">
+    <div id="info">
+      <p>Облік справ</p>
+      <p>Загальна кількість справ <span id="counter">0</span></p>
     </div>
 
-    <script src="Js/index.js"></script>
+    <div id="wrapper">
+      <div class="form__group field">
+        <input type="input" class="form__field" placeholder="case" name="case" id='case' required />
+        <label for="case" class="form__label">Справа</label>
+        <div id="errorCase"></div>
+      </div>
+      <div class="form__group field">
+        <input type="datetime-local" class="form__field" placeholder="startOfExecution" name="startOfExecution"
+          id='startOfExecution' min="2023-04-13T00:00" max="9999-06-14T00:00" required />
+        <label for="startOfExecution" class="form__label">Початок виконання</label>
+        <div id="errorTime"></div>
+      </div>
+      <div class="form__group field">
+        <input type="input" class="form__field" placeholder="notes" name="notes" id='notes' />
+        <label for="notes" class="form__label">Примітки (He обов'язкове поле)</label>
+      </div>
+      <div class="form__group field">
+        <input style="display: none;" type="file" class="form__field" placeholder="image" name="image" id='image'
+          accept="image/*" />
+        <label style="cursor:pointer;" for="image" class="form__label">Виберіть Зображення (He обов'язкове поле)</label>
+        <button id="fileButton" onclick="document.getElementById('image').click();">Натисніть, щоб вибрати
+          зобреження</button>
+      </div>
+    </div>
 
-    
+
+
+    <button onclick="console.save(localStorage.getItem(`toDoList`))" class="custom-btn btn-7"
+      id="btn"><span>Експортувати список</span></button>
+    <input style="display: none;" type="file" class="importFile" placeholder="importFile" name="importFile"
+      id='importFile' accept="application/JSON" />
+    <button class="custom-btn btn-7" onclick="document.getElementById('importFile').click();">Імпортувати
+      список</button>
+    <br>
+    <button onclick="validation()" class="custom-btn btn-7" id="btn"><span>Додати</span></button>
+
+    <div class="list" id="list">
+    </div>
+
+  </div>
+
+  <div class="popup">
+    <p id="popupP">An Error has occured</p>
+  </div>
+
+  </div>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+  <script src="js/addImage.js"></script>
+  <script src="js/createToDoListItem.js"></script>
+  <script src="js/delete.js"></script>
+  <script src="js/onAdd.js"></script>
+  <script src="js/replayControl.js"></script>
+  <script src="js/validation.js"></script>
+
+  <script src="js/exportToDoList.js"></script>
+  <script src="js/importToDoList.js"></script>
+  <script src="js/loadLocalStorage.js"></script>
+
+  <script src="js/popupError.js"></script>
+  <script src="js/randomizer.js"></script>
+  <script src="js/themes.js"></script>
 </body>
+
 </html>
